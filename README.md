@@ -10,8 +10,8 @@
 
 ## 설계
 > **User Flow Diagram**
-    
-![BTD](https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/01886721-df9b-4a8f-ac65-2736ea558342)    
+      
+<img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/01886721-df9b-4a8f-ac65-2736ea558342" width="400" height="400"/>
 
 ## 구현
 > **Balloon**
@@ -37,9 +37,44 @@
 
 - 타워는 클릭 이벤트를 처리하는 기능이 담긴 Button 클래스를 상속받았으며, 타워의 종류에 따라 자식 클래스로 나눠 구현하였습니다.
 - 게임 머니를 사용해 타워를 업그레이드 가능합니다.
+- 타워의 공통적인 부분(스탯, 발사체 등)을 Tower 클래스에서 생성해 세부 타워들이 모두 이용 가능하도록 구현했습니다.
 - 업그레이드가 완료 되었을 때마다 타워의 기능(스탯, 공격 타입 등)과 텍스처를 업데이트하도록 구현했습니다.
 - 타워는 설치 UI를 클릭하면 생성되며, 설치 가능한 장소에만 드래그&드롭을 통해 배치할 수 있습니다.
 - 설치 가능 여부는 색상(불가능-빨강)을 통해 구분 가능하도록 구현했습니다.
 
 - 타워의 종류 및 업그레이드 정보    
-    ![dart_monkey](https://github.com/seungdo1234/Game_Portfolio/assets/105622632/e2402148-e676-4f9d-b8ca-56623a2667b5)    
+    ![dart bomb](https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/e4fcab86-2772-4451-95f8-d1dfda3bb849)     
+    ![Ice Tack](https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/be074bdd-d774-4781-a468-355da7ff1963)
+
+> **System**
+
+- 여러 곳에서 사용해야 하는 정보들(풍선, 임시저장 정보, 게임 진행 속도, 사운드 조절)은 매니저 클래스(GameInstance)를 따로 만들어 관리했습니다.
+- 게임 씬(InGameScene)은 여러 상태(New, Wait, Play, Stop, Defeat, Victory)를 가지고 있으며, 현재 상태에 맞게 동작합니다.    
+    * New 상태 : 새로운 게임 시작(이어하기는 Wait로 바로 이동), 게임에 필요한 정보들을 초기화합니다.    
+    * Wait 상태 : 삭제 예약된 타워를 삭제하고, 라운드 정보를 백업합니다.
+    * Play 상태 : 라운드 정보(string)에 따른 풍선을 스폰하며, 모든 풍선이 비활성화되면 Wait 상태로 이동합니다.
+    * Stop 상태 : 설정 UI를 누른 경우로, 게임이 정지된 상태입니다.
+    * Defeat 상태 : 체력이 0이되어 패배한 상태입니다. 모든 정보를 초기화 합니다.
+    * Victory 상태 : 모든 라운드(40)을 클리어한 상태입니다. 모든 정보를 초기화 합니다.
+- 맵 선택
+    * 맵은 MonkeyLane(원숭이 도로), Patch(밭), Tutorial(테스트용)이 구현되어 있습니다.
+    * 맵 선택 정보를 게임 씬(InGameScene)에 전달해 풍선의 진행로 등 맵 정보를 자동으로 설정하도록 설계하였습니다.    
+        <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/66c32fa1-9ddb-4685-a72e-9fc211c40d9e" width="400" height="400"/>
+- 테스트용 맵(Tutorial)에서는 여러 단축키를 통해 테스트 가능하도록 구현했습니다.
+    * SpaceBar : 게임머니 +10,000
+    * W : 체력 -100
+    * F : 라운드 +1
+    * A ~ Z(F, H, J, L, N, P, R, W 제외) : 풍선 스폰
+- 이어하기 시스템
+    * 맵 선택 중 이어하기 버튼이 존재하며, GameInstance에 저장된 정보가 있으면 화면에 노출됩니다.
+    * 게임을 클리어 or 패배한 경우 이어하기 정보는 소멸합니다.
+    * 게임 진행 중 설정을 통해 로비로 돌아오는 경우 진행 직전의 라운드(Wait) 정보를 저장합니다.
+        <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/4cd4d39d-dad1-44eb-b276-be3de072c9c5" width="600" height="200"/>
+- 사운드 시스템
+    * 사운드는 크게 BGM(배경), EffectSound(효과음)이 존재합니다.
+    * 로비에서는 BGM을 On/Off 가능하며 게임 진행 중에 설정을 통해 BGM, EffectSound를 On/Off 가능합니다.
+        <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/9d61c738-2d25-4bf4-8119-02751a27b387" width="600" height="200"/>
+- 배속 시스템
+    * 시작 UI를 게임 진행 중에 1회 추가로 누르면 배속 플레이가 가능하도록 구현했습니다.
+    * 해당 라운드가 끝나면 원래 속도로 돌아오도록 설계했습니다.
+        <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/fa54945d-b954-4601-949b-2605e93c64f8" width="700" height="200"/>
