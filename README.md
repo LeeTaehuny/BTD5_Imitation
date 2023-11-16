@@ -8,6 +8,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;* Tool : Visual Studio 2022    
 &nbsp;&nbsp;&nbsp;&nbsp;* WinAPI 환경에서의 DirectX11 API 사용
 
+## 목표
+- 2주 내외의 짧은 기간동안 BTD5 중 특정 기능들을 구현해보기
+<img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/c4237a1e-e1ce-4a2c-9895-ac6fef0a8200" width="400" height="400"/>
+<img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/45cb874c-ac90-48fa-9a20-143c6c997a98" width="400" height="400"/>
+
 ## 설계
 > **User Flow Diagram**
       
@@ -25,13 +30,13 @@
     
     ![balloons](https://github.com/seungdo1234/Game_Portfolio/assets/105622632/cb56c316-a06d-4d9d-a195-6eae00b2853a)    
        
-    -> Common : 일반 타입입니다. 모든 종류의 데미지를 받으며, 특별한 이벤트가 발생하지 않습니다.    
-    -> Explosion Resist : 폭발 저항 타입입니다. 폭발로부터 받는 피해를 무시합니다.      
-    -> Ice Resist : 얼음 저항 타입입니다. 상태이상(동상, 슬로우)에 걸리지 않습니다.       
-    -> Duble Resist : 폭발 및 얼음 저항 타입입니다. 폭발과 상태이상에 피해를 입지 않습니다.       
-    -> Sharp resist : 날카로운 공격 저항 타입입니다. 날카로운 공격으로부터 받는 피해를 무시합니다.        
-    -> Regenerate : 재생성 타입입니다. 시간이 지나면 체력을 회복합니다.        
-    -> Camo : 은신 타입입니다. 일반적인 타워의 공격 대상이 되지 않습니다.    
+    * Common : 일반 타입입니다. 모든 종류의 데미지를 받으며, 특별한 이벤트가 발생하지 않습니다.    
+    * Explosion Resist : 폭발 저항 타입입니다. 폭발로부터 받는 피해를 무시합니다.      
+    * Ice Resist : 얼음 저항 타입입니다. 상태이상(동상, 슬로우)에 걸리지 않습니다.       
+    * Duble Resist : 폭발 및 얼음 저항 타입입니다. 폭발과 상태이상에 피해를 입지 않습니다.       
+    * Sharp resist : 날카로운 공격 저항 타입입니다. 날카로운 공격으로부터 받는 피해를 무시합니다.        
+    * Regenerate : 재생성 타입입니다. 시간이 지나면 체력을 회복합니다.        
+    * Camo : 은신 타입입니다. 일반적인 타워의 공격 대상이 되지 않습니다.    
     
 > **Tower**
 
@@ -78,3 +83,7 @@
     * 시작 UI를 게임 진행 중에 1회 추가로 누르면 배속 플레이가 가능하도록 구현했습니다.
     * 해당 라운드가 끝나면 원래 속도로 돌아오도록 설계했습니다.
         <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/fa54945d-b954-4601-949b-2605e93c64f8" width="700" height="200"/>
+            
+## 플레이 영상
+
+
