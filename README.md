@@ -84,6 +84,7 @@
     * 해당 라운드가 끝나면 원래 속도로 돌아오도록 설계했습니다.
         <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/fa54945d-b954-4601-949b-2605e93c64f8" width="700" height="200"/>
             
-## 플레이 영상
+## 플레이 영상 링크
+**https://www.youtube.com/watch?v=2ZdODOGuAvg**
 
 
