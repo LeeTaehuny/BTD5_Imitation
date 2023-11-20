@@ -14,9 +14,11 @@
 <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/45cb874c-ac90-48fa-9a20-143c6c997a98" width="400" height="400"/>
 
 ## 설계
-> **User Flow Diagram**
-      
-<img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/01886721-df9b-4a8f-ac65-2736ea558342" width="400" height="400"/>
+> **User Flow Diagram**      
+    <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/01886721-df9b-4a8f-ac65-2736ea558342" width="500" height="500"/>
+    
+> **Class Structure**
+    <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/698ae815-80bd-4c79-8c48-7f26bd8dff00" width="900" height="400"/>
 
 ## 구현
 > **Balloon**
@@ -50,7 +52,7 @@
 - 타워의 공통적인 부분(스탯, 발사체 등)을 Tower 클래스에서 생성해 세부 타워들이 모두 이용 가능하도록 구현했습니다.
 - 업그레이드가 완료 되었을 때마다 타워의 기능(스탯, 공격 타입 등)과 텍스처를 업데이트하도록 구현했습니다.
 - 업그레이드 진행 시 해당 타워의 누적 비용이 증가합니다.
-- 타워를 판매하면 누적 비용의 80%를 획득할 수 있습니다.
+- 타워를 판매하면 누적 비용(구매비용 + 업그레이드 비용)의 80%를 획득할 수 있습니다.
 - 타워는 설치 UI를 클릭하면 생성되며, 설치 가능한 장소에만 드래그&드롭을 통해 배치할 수 있습니다.
 - 설치 가능 여부는 색상(불가능-빨강)을 통해 구분 가능하도록 구현했습니다.
 - 업그레이드 루트가 2개 존재하며 한 쪽으로 업그레이드를 2이상 했다면 다른쪽은 최대 업그레이드 가능 레벨이 2가 됩니다.
@@ -80,8 +82,8 @@
     * A ~ Z(F, H, J, L, N, P, R, W 제외) : 풍선 스폰
 - 이어하기 시스템
     * 맵 선택 중 이어하기 버튼이 존재하며, GameInstance에 저장된 정보가 있으면 화면에 노출됩니다.
+    * 게임 진행 중 설정을 통해 로비로 돌아오는 경우 진행 직전의 라운드(Wait) 정보를 저장합니다. (이어하기 가능 상태)
     * 게임을 클리어 or 패배한 경우 이어하기 정보는 소멸합니다.
-    * 게임 진행 중 설정을 통해 로비로 돌아오는 경우 진행 직전의 라운드(Wait) 정보를 저장합니다.
         <img src="https://github.com/LeeTaehuny/BTD5_Imitation/assets/105622632/4cd4d39d-dad1-44eb-b276-be3de072c9c5" width="600" height="200"/>
 - 사운드 시스템
     * 사운드는 크게 BGM(배경), EffectSound(효과음)이 존재합니다.
