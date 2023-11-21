@@ -109,6 +109,15 @@ void InGameScene::Update()
 		roundCnt = 1;
 		// 체력 초기화
 		GameInstance::Get()->SetHp(200);
+		// 저장된 타워 초기화
+		if (!GameInstance::Get()->GetLastTowerInfo().empty())
+		{
+			for (Tower* tower : GameInstance::Get()->GetLastTowerInfo())
+			{
+				delete tower;
+				tower = nullptr;
+			}
+		}
 		// 시작 타워 초기화
 		if (towers.size())
 		{
