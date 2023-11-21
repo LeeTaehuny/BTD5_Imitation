@@ -4,9 +4,11 @@
 - 개발 인원 : 1인
 - 개발 목적 : DirectX11의 렌더링 파이프라인 이해 및 실습
 - 개발 환경    
-&nbsp;&nbsp;&nbsp;&nbsp;* 사용 언어 : C++    
-&nbsp;&nbsp;&nbsp;&nbsp;* Tool : Visual Studio 2022    
-&nbsp;&nbsp;&nbsp;&nbsp;* WinAPI 환경에서의 DirectX11 API 사용
+    * 사용 언어 : C++    
+    * Tool : Visual Studio 2022    
+    * WinAPI 환경에서의 DirectX11 API 사용
+    * 설명 영상 링크 : https://www.youtube.com/watch?v=qEYV3vBWn8M
+      (플레이 영상은 하단 참조)
 
 ## 목표
 - 2주 내외의 짧은 기간동안 BTD5 중 특정 기능들을 구현해보기
