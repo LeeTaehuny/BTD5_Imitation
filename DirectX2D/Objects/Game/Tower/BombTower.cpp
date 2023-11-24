@@ -350,6 +350,7 @@ void BombTower::UpdateData()
 		for (Projectile* sub : subProjectile)
 		{
 			sub->SetPower(100);
+			sub->SetDamage(1);
 		}
 	}
 
@@ -362,6 +363,7 @@ void BombTower::FireSubProjectile(void* balloon)
 	// 처음으로 충돌한 적의 정보를 토대로 해당 위치에서 4 ~ 8방향 파편 발사
 	Balloon* enemy = (Balloon*)balloon;
 	int cnt = 0;
+
 	for (Projectile* sub : subProjectile)
 	{
 		if (!sub->Active())
@@ -387,27 +389,35 @@ void BombTower::FireSubProjectile(void* balloon)
 			{
 			case 0:
 				sub->Fire(enemy->Pos(), Vector2(0, 1));
+				sub->AddHit(enemy);
 				break;
 			case 1:
 				sub->Fire(enemy->Pos(), Vector2(1, 0));
+				sub->AddHit(enemy);
 				break;
 			case 2:
 				sub->Fire(enemy->Pos(), Vector2(0, -1));
+				sub->AddHit(enemy);
 				break;
 			case 3:
 				sub->Fire(enemy->Pos(), Vector2(-1, 0));
+				sub->AddHit(enemy);
 				break;
 			case 4:
 				sub->Fire(enemy->Pos(), Vector2(1, 1).GetNormalized());
+				sub->AddHit(enemy);
 				break;
 			case 5:
 				sub->Fire(enemy->Pos(), Vector2(1, -1).GetNormalized());
+				sub->AddHit(enemy);
 				break;
 			case 6:
 				sub->Fire(enemy->Pos(), Vector2(-1, 1).GetNormalized());
+				sub->AddHit(enemy);
 				break;
 			case 7:
 				sub->Fire(enemy->Pos(), Vector2(-1, -1).GetNormalized());
+				sub->AddHit(enemy);
 				break;
 			}
 

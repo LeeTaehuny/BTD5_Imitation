@@ -207,15 +207,19 @@ void IceTower::Attack()
 							{
 							case 0:
 								p->Fire(enemy->Pos(), Vector2(0, 1), enemy);
+								p->AddHit(enemy);
 								break;
 							case 1:
 								p->Fire(enemy->Pos(), Vector2(1, 0), enemy);
+								p->AddHit(enemy);
 								break;
 							case 2:
 								p->Fire(enemy->Pos(), Vector2(0, -1), enemy);
+								p->AddHit(enemy);
 								break;
 							case 3:
 								p->Fire(enemy->Pos(), Vector2(-1, 0), enemy);
+								p->AddHit(enemy);
 								break;
 							}
 

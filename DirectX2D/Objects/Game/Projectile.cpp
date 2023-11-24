@@ -183,9 +183,10 @@ void Projectile::Attack()
 		break;
 
 	case Type::EXPLOSION:
+		bool once = true;
+
 		for (Balloon* balloon : balloons)
 		{
-			bool once = true;
 			if (!balloon->Active()) continue;
 
 			if (find(hit.begin(), hit.end(), balloon) != hit.end()) continue;

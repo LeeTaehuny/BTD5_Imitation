@@ -112,6 +112,7 @@ private:
     float slowRate = 0.0f;
     float sTime = 0.0f;
     float stopTime = 0.0f;
+    float meltTime = 0.0f;
 
     bool bIsSlow = false;
     bool bIsMeltdown = false;

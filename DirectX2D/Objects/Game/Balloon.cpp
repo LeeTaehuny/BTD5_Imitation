@@ -94,6 +94,17 @@ void Balloon::Update()
 
 	UpdateTexture();
 
+	if (bIsMeltdown)
+	{
+		meltTime += DELTA;
+
+		if (meltTime >= 2.0f / GameInstance::Get()->GetGlobalSpeed())
+		{
+			bIsMeltdown = false;
+			meltTime = 0.0f;
+		}
+	}
+
 	// 풍선의 상태에 따라 구분합니다.
 	// * NONE : 일반적인 이동
 	// * SLOW : 속도 감소
@@ -107,6 +118,7 @@ void Balloon::Update()
 	case SLOW:
 		if (bIsSlow)
 		{
+			speed *= (100.0f - slowRate) / 100.0f;
 			state = NONE;
 			break;
 		}
