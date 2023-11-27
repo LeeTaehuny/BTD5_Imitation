@@ -1,4 +1,4 @@
-# [DirectX11] BTD5_Imitation(BTD5 모작)
+# [DirectX11 2D Project] BTD5_Imitation(BTD5 모작)
 ## 개요
 - 원작 : Bloons Tower Defense 5
 - 장르 : 타워디펜스
