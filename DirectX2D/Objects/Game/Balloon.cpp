@@ -118,15 +118,16 @@ void Balloon::Update()
 	case SLOW:
 		if (bIsSlow)
 		{
-			speed *= (100.0f - slowRate) / 100.0f;
+			//speed *= (100.0f - slowRate) / 100.0f;
 			state = NONE;
 			break;
 		}
 		speed *= (100.0f - slowRate) / 100.0f;
 		Move();
 
-		state = NONE;
 		bIsSlow = true;
+		state = NONE;
+		
 		break;
 
 	case STOP:
